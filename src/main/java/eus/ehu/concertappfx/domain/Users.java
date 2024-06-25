@@ -1,6 +1,9 @@
 package eus.ehu.concertappfx.domain;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Table(name = "USERS") // Renames the table to avoid using a reserved keyword
@@ -12,11 +15,15 @@ public abstract class Users {
     private Long id;
 
     private String name;
-    private int year;
+    private int yearCreation;
     private String leader;
+
 
     private String email;
     private String password;
+
+    @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Concert> concerts = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -26,12 +33,12 @@ public abstract class Users {
         this.name = name;
     }
 
-    public int getYear() {
-        return year;
+    public int getYearCreation() {
+        return yearCreation;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setYearCreation(int yearCreation) {
+        this.yearCreation = yearCreation;
     }
 
     public String getLeader() {
@@ -60,14 +67,14 @@ public abstract class Users {
 
     public Users(){}
 
-    public Users(String name, int year){
+    public Users(String name, int yearCreation){
         this.name = name;
-        this.year = year;
+        this.yearCreation = yearCreation;
     }
 
-    public Users(String name, int year, String leader){
+    public Users(String name, int yearCreation, String leader){
         this.name = name;
-        this.year = year;
+        this.yearCreation = yearCreation;
         this.leader = leader;
     }
 
@@ -75,6 +82,13 @@ public abstract class Users {
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    @Override
+    public String toString(){
+
+        return this.name;
+
     }
 
 }

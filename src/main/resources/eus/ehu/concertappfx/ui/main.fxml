@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="mainVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eus.ehu.concertapp.uiControllers.MainController">
+<VBox fx:id="mainVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eus.ehu.concertappfx.uiControllers.MainController">
    <children>
-      <SplitPane dividerPositions="0.14906417112299464" prefHeight="467.0" prefWidth="600.0">
+      <SplitPane dividerPositions="0.13386243386243385" prefHeight="467.0" prefWidth="600.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="249.0">
                <children>
@@ -22,7 +22,7 @@
                   <Button layoutX="13.0" layoutY="52.0" mnemonicParsing="false" onAction="#goToMainButton" text="Main" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="543.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="641.0">
                <children>
                   <DatePicker fx:id="datepicker" layoutX="12.0" layoutY="231.0" />
                   <ComboBox fx:id="citycombo" layoutX="10.0" layoutY="149.0" prefWidth="150.0" />
@@ -30,13 +30,16 @@
                   <Label layoutX="14.0" layoutY="39.0" text="Choose an artist" />
                   <Label layoutX="12.0" layoutY="207.0" text="Choose a date" />
                   <Label layoutX="14.0" layoutY="122.0" text="Choose a city" />
-                  <TableView fx:id="infoTable" layoutX="215.0" layoutY="62.0" prefHeight="200.0" prefWidth="412.0">
-                    <columns>
-                      <TableColumn fx:id="artistinfo" prefWidth="166.4000244140625" text="Artist information" />
-                      <TableColumn fx:id="citiesinfo" prefWidth="95.99993896484375" text="Cities" />
-                        <TableColumn fx:id="datesinfo" prefWidth="149.60009765625" text="Dates" />
-                    </columns>
+                  <Label layoutX="124.0" layoutY="332.0" text="Purchases made 30 days prior to the concert date receive a special discount!" />
+                  <TableView fx:id="infotable" layoutX="226.0" layoutY="62.0" prefHeight="200.0" prefWidth="412.0">
+                     <columns>
+                        <TableColumn fx:id="artistinfo" prefWidth="127.20002746582031" text="Artist information" />
+                        <TableColumn fx:id="citiesinfo" prefWidth="120.79998779296875" text="Cities" />
+                        <TableColumn fx:id="datesinfo" prefWidth="88.0" text="Dates" />
+                        <TableColumn fx:id="priceInfo" prefWidth="76.800048828125" text="Price" />
+                     </columns>
                   </TableView>
+                  <Button layoutX="300.0" layoutY="296.0" mnemonicParsing="false" onAction="#clearButton" text="Clear" />
                </children>
             </AnchorPane>
         </items>

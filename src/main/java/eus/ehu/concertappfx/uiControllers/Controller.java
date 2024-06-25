@@ -1,6 +1,6 @@
-package eus.ehu.concertapp.uiControllers;
+package eus.ehu.concertappfx.uiControllers;
 
-import eus.ehu.concertapp.ui.MainGUI;
+import eus.ehu.concertappfx.ui.MainGUI;
 
 public interface Controller {
     void setMainApp(MainGUI mainGUI);

@@ -1,15 +1,16 @@
-package eus.ehu.concertapp.uiControllers;
+package eus.ehu.concertappfx.uiControllers;
 
-import eus.ehu.concertapp.businessLogic.BLFacade;
-import eus.ehu.concertapp.ui.MainGUI;
+import eus.ehu.concertappfx.businessLogic.BLFacade;
+import eus.ehu.concertappfx.ui.MainGUI;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.util.Duration;
+
+import java.io.IOException;
 
 public class LoginStaffController implements Controller{
 
@@ -40,11 +41,16 @@ public class LoginStaffController implements Controller{
             infoLoginStaff.setText("Fill in all fields");
         }
 
-        else if(bl.loginStaff(keyLoginStaff.getText(), emailLoginStaff.getText(), emailLoginStaff.getText())){
+        else if(bl.loginStaff(keyLoginStaff.getText(), emailLoginStaff.getText(), passwordLoginStaff.getText())){
 
             infoLoginStaff.setText("Login successful");
             PauseTransition pause = new PauseTransition(Duration.seconds(1));
-            pause.setOnFinished(e ->{mainGUI.showScene("mainIn"); //tengo que poner el scene para el staff que me falta crear
+            pause.setOnFinished(e ->{
+                try {
+                    mainGUI.showScene("StaffIn");
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
 
             });
             pause.play();
@@ -55,6 +61,11 @@ public class LoginStaffController implements Controller{
 
         }
 
+    }
+
+    @FXML
+    void onClickReturnLS(ActionEvent event) throws IOException {
+        mainGUI.showScene("Main");
     }
 
     @Override

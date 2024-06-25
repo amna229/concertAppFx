@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("GROUP")
-public class Group extends Users{
+public class Group extends Users {
 
     public Group() {
     }

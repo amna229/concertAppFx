@@ -5,20 +5,20 @@ import jakarta.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("STAFFMEMBER")
-public class StaffMember extends Users{
+public class StaffMember extends Users {
 
-    private String key;
+    private String code;
 
     public StaffMember() {
     }
 
-    public StaffMember(String name, String email, String password, String key) {
+    public StaffMember(String name, String email, String password, String code) {
         super(name, email, password);
-        this.key=key;
+        this.code=code;
     }
 
-    public String getKey() {
-        return key;
+    public String getCode() {
+        return code;
     }
 
 

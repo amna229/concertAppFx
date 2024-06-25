@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("SOLOIST")
-public class Soloist extends Users{
+public class Soloist extends Users {
 
     public Soloist() {
     }

@@ -1,4 +1,5 @@
-package eus.ehu.concertapp.configuration;
+package eus.ehu.concertappfx.configuration;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -48,4 +49,3 @@ public class Config {
     }
 
 }
-
