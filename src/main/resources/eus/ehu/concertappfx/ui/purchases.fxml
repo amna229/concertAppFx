@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eus.ehu.concertappfx.uiControllers.MainInController">
+   <children>
+      <SplitPane dividerPositions="0.1603174603174603" prefHeight="467.0" prefWidth="600.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="249.0">
+               <children>
+                  <Button layoutX="26.0" layoutY="365.0" mnemonicParsing="false" onAction="#logOutButton" text="Log out" />
+                  <Button layoutX="29.0" layoutY="327.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="543.0">
+               <children>
+                  <DatePicker fx:id="datepickerIn" layoutX="12.0" layoutY="231.0" />
+                  <ComboBox fx:id="citycomboIn" layoutX="10.0" layoutY="149.0" prefWidth="150.0" />
+                  <ComboBox fx:id="artistcomboIn" layoutX="14.0" layoutY="63.0" prefWidth="150.0" />
+                  <Label layoutX="14.0" layoutY="39.0" text="Choose an artist" />
+                  <Label layoutX="12.0" layoutY="207.0" text="Choose a date" />
+                  <Label layoutX="14.0" layoutY="122.0" text="Choose a city" />
+                  <TableView fx:id="infotableIn" layoutX="215.0" layoutY="62.0" prefHeight="200.0" prefWidth="412.0">
+                     <columns>
+                        <TableColumn fx:id="artistinfo" prefWidth="138.4000244140625" text="Artist information" />
+                        <TableColumn fx:id="citiesinfo" prefWidth="109.5999755859375" text="Cities" />
+                        <TableColumn fx:id="datesinfo" prefWidth="88.0" text="Dates" />
+                        <TableColumn fx:id="priceInfo" prefWidth="76.800048828125" text="Price" />
+                     </columns>
+                  </TableView>
+                  <Button layoutX="277.0" layoutY="325.0" mnemonicParsing="false" onAction="#reserveButton" prefHeight="26.0" prefWidth="76.0" text="Reserve" />
+                  <Label layoutX="14.0" layoutY="284.0" text="Choose the number of tickets" />
+                  <Label fx:id="showInfoReservation" layoutX="358.0" layoutY="339.0" prefHeight="50.0" prefWidth="276.0" />
+                  <Spinner fx:id="numTickets" layoutX="15.0" layoutY="313.0" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</VBox>
